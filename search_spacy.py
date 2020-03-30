@@ -7,7 +7,7 @@ nlp = en_core_web_sm.load()
 
 #open the reddit data
 with open("scraping.json") as input_file:
-          scraping_data = json.load(input_file)
+    scraping_data = json.load(input_file)
 
 #var initialization
 title = scraping_data["title"]
