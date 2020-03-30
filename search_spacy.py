@@ -6,9 +6,8 @@ import en_core_web_sm
 nlp = en_core_web_sm.load()
 
 #open the reddit data
-f = open('scraping.json')
-scraping_data = json.load(f)
-f.close()
+with open("scraping.json") as input_file:
+          scraping_data = json.load(input_file)
 
 #var initialization
 title = scraping_data["title"]
@@ -44,6 +43,5 @@ for index in title:
             
     
 final_file = json.dumps(coord, indent = 2)
-f = open("coord.json","w")
-f.write(final_file)
-f.close()   
+with open("coord.json","w") as output_file:
+    output_file.write(final_file)
