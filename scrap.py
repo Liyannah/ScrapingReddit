@@ -16,5 +16,5 @@ for post in sub_reddit.hot(limit=10):
     i += 1
     
 final_file = json.dumps(posts, indent = 2)
-with open("scraping.json","w") as ouput_file:
+with open("scraping.json","w") as output_file:
     output_file.write(final_file)
