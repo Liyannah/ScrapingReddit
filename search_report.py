@@ -1,12 +1,9 @@
 # coding: utf-8
 
-import geocoder
 import json
-import spacy
 from spacy import displacy
 from collections import Counter
 import en_core_web_sm
-from pprint import pprint
 from pathlib import Path
 nlp = en_core_web_sm.load()
 
