@@ -31,7 +31,7 @@ for index in title:
         for association in sent:
             if association[1] not in ('DATE', 'TIME', 'PERCENT', 'MONEY', 'QUANTITY', 'ORDINAL', 'CARDINAL') :
                 g = geocoder.geonames(association[0], key="liyanna")
-                if g.geonames_id != None:
+                if g.geonames_id is not None:
                     place = geocoder.geonames(g.geonames_id, method="details", key="liyanna")
                     coord["coord"+index].append({})
                     coord["coord"+index][-1]["lieu"] = association[0]
