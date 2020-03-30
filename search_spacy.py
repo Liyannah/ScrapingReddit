@@ -30,7 +30,7 @@ for index in title:
 # geolocalisation of the named entities found
         for association in sent:
             if association[1] not in ('DATE', 'TIME', 'PERCENT', 'MONEY',
-                          'QUANTITY', 'ORDINAL', 'CARDINAL'):
+                                      'QUANTITY', 'ORDINAL', 'CARDINAL'):
                 g = geocoder.geonames(association[0], key="liyanna")
                 if g.geonames_id is not None:
                     place = geocoder.geonames(g.geonames_id, method="details",
