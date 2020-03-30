@@ -3,8 +3,10 @@
 import praw
 import json
 
-reddit = praw.Reddit(client_id = "9ZPnoeKPkoLnkQ", client_secret = "iAZgqpDqQr8eimDAHnCuLQPB9tY", user_agent="ScrapReddit")
-posts = {"title": {}, "id":{}, "url": {}}
+reddit = praw.Reddit(client_id = "9ZPnoeKPkoLnkQ",
+                     client_secret = "iAZgqpDqQr8eimDAHnCuLQPB9tY",
+                     user_agent="ScrapReddit")
+posts = {"title": {}, "id": {}, "url": {}}
 i = 0
 
 sub_reddit = reddit.subreddit('EarthPorn')
@@ -14,7 +16,7 @@ for post in sub_reddit.hot(limit=10):
     posts["id"][i] = post.id
     posts["url"][i] = post.url
     i += 1
-    
+
 final_file = json.dumps(posts, indent = 2)
-with open("scraping.json","w") as output_file:
+with open("scraping.json", "w") as output_file:
     output_file.write(final_file)
